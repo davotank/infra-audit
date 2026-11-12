@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1.0.0",
+  "source": {
+    "portal": "KPPP",
+    "url": "https://kppp.karnataka.gov.in/",
+    "retrievedAt": "2026-11-01T10:00:00Z",
+    "method": "manual",
+    "onboardedBy": "steward-blr-01"
+  },
+  "tender": {
+    "referenceNumber": "2026_BBMP_000001_1",
+    "title": "Resurfacing of 80 Feet Road, Ward 151 (illustrative example)",
+    "department": "Bruhat Bengaluru Mahanagara Palike - Road Infrastructure",
+    "category": "road",
+    "publishedOn": "2026-06-15"
+  },
+  "contractor": {
+    "name": "Example Infra Pvt Ltd",
+    "idType": "GSTIN",
+    "idValue": "29ABCDE1234F1Z5",
+    "entityType": "company"
+  },
+  "award": {
+    "estimatedValuePaise": 2600000000,
+    "awardedValuePaise": 2500000000,
+    "awardedOn": "2026-08-01",
+    "scheduledCompletion": "2027-03-31",
+    "defectLiabilityMonths": 36,
+    "fundingScheme": "Municipal budget"
+  },
+  "location": {
+    "pincode": "560001",
+    "ward": "151",
+    "city": "Bengaluru",
+    "district": "Bengaluru Urban",
+    "state": "Karnataka",
+    "geometry": { "type": "LineString", "coordinates": [[77.5946, 12.9716], [77.6010, 12.9750]] }
+  },
+  "documents": [
+    {
+      "kind": "work_order",
+      "cid": "bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi",
+      "sha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+      "mimeType": "application/pdf"
+    }
+  ],
+  "specifications": { "lengthMetres": 1200, "carriagewayWidthMetres": 7, "bituminousConcreteThicknessMm": 40 }
+}

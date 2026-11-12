@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "tenderId": 1,
+  "chainId": 80002,
+  "auditor": {
+    "name": "Example Auditor",
+    "wallet": "0x90F79bf6EB2c4f870365E785982E1f101E93b906",
+    "credential": "IEI M-000000 (illustrative)",
+    "lab": "Example NABL-accredited lab",
+    "conflictOfInterestDeclaration": true
+  },
+  "inspection": { "date": "2027-05-02", "chainagesInspected": ["0+200", "0+850"] },
+  "tests": [
+    { "name": "Bituminous course thickness (core)", "standard": "MoRTH Sec. 500", "location": "0+200", "specified": 40, "measured": 26, "unit": "mm", "pass": false }
+  ],
+  "verdict": "fails_specification",
+  "summary": "BC layer thickness is 35% below specification at both cored locations.",
+  "reportPdf": { "cid": "bafybeigdyrzt5sfp7udm7hu76uh7y26nf3efuylqabf3oclgtqy55fbzdi", "sha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08" },
+  "signature": { "scheme": "eip712-jcs-v1", "value": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000" }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "@infra-audit/schemas",
+  "version": "0.1.0",
+  "private": true,
+  "description": "JSON Schemas for documents pinned to IPFS",
+  "scripts": {
+    "test": "node scripts/validate.mjs"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1"
+  }
+}

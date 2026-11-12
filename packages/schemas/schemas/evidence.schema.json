@@ -1,0 +1,75 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://infra-audit.example/schemas/evidence/v1.json",
+  "title": "Citizen evidence (v1)",
+  "description": "Pinned to IPFS by the citizen's client before the ZK proof is generated. Its CID goes into the proof's signal. Anything here is public and permanent, so the schema is closed (additionalProperties: false) and allows no field that could identify the reviewer: no device model, no precise time, no precise location, no free-form contact details.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schemaVersion", "tenderId", "chainId", "observedOn", "observations", "media"],
+  "properties": {
+    "schemaVersion": { "const": "1.0.0" },
+    "tenderId": { "type": "integer", "minimum": 1 },
+    "chainId": { "type": "integer", "description": "137 = Polygon PoS, 80002 = Amoy" },
+    "observedOn": {
+      "type": "string",
+      "format": "date",
+      "description": "Date only. Exact capture times, joined with other data, can identify a person."
+    },
+    "approxLocation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["geohash"],
+      "properties": {
+        "geohash": {
+          "type": "string",
+          "pattern": "^[0-9b-hjkmnp-z]{5,7}$",
+          "description": "Precision 7 at most (~150 m cell). Enough to place the defect on the project, but not the reviewer's home."
+        }
+      }
+    },
+    "observations": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["type", "severity"],
+        "properties": {
+          "type": {
+            "enum": [
+              "pothole", "surface_cracking", "rutting", "waterlogging", "poor_drainage",
+              "missing_markings", "missing_signage", "incomplete_work", "debris_not_cleared",
+              "exposed_rebar", "structural_crack", "footpath_damage", "work_not_started", "good_condition"
+            ]
+          },
+          "severity": { "enum": ["none", "minor", "moderate", "severe", "dangerous"] },
+          "note": {
+            "type": "string",
+            "maxLength": 280,
+            "description": "Optional. The client should warn the user not to include names, phone numbers or addresses."
+          }
+        }
+      }
+    },
+    "media": {
+      "type": "array",
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["cid", "mimeType", "sha256", "metadataStripped"],
+        "properties": {
+          "cid": { "type": "string", "minLength": 46 },
+          "mimeType": { "enum": ["image/jpeg", "image/webp", "video/mp4"] },
+          "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+          "metadataStripped": {
+            "const": true,
+            "description": "The client re-encodes the image, which drops all EXIF/XMP data (GPS, device serial, timestamp). Setting a flag is not enough; the client must actually re-encode."
+          },
+          "facesBlurred": { "type": "boolean" }
+        }
+      }
+    }
+  }
+}

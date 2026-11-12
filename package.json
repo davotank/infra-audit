@@ -1,0 +1,11 @@
+{
+  "name": "infra-audit",
+  "private": true,
+  "description": "Decentralized public infrastructure and anti-corruption registry (India)",
+  "workspaces": ["packages/*"],
+  "scripts": {
+    "build": "npm run build -w @infra-audit/contracts",
+    "test": "npm test --workspaces"
+  },
+  "engines": { "node": ">=20" }
+}

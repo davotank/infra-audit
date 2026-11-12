@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "1.0.0",
+  "tenderId": 1,
+  "chainId": 80002,
+  "observedOn": "2026-11-10",
+  "approxLocation": { "geohash": "tdr1v9q" },
+  "observations": [
+    { "type": "pothole", "severity": "severe", "note": "Three potholes near the bus stop, about 30 cm across" },
+    { "type": "waterlogging", "severity": "moderate" }
+  ],
+  "media": [
+    {
+      "cid": "bafkreihdwdcefgh4dqkjv67uzcmw7ojee6xedzdetojuzjevtenxquvyku",
+      "mimeType": "image/jpeg",
+      "sha256": "2c26b46b68ffc68ff99b453c1d30413413422d706483bfa0f98a5e886266e7ae",
+      "metadataStripped": true,
+      "facesBlurred": true
+    }
+  ]
+}
